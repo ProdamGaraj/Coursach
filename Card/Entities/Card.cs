@@ -9,7 +9,7 @@ namespace Cards.Entities
         public string LastName { get; set; }
         public string MobilePhone { get; set; }
         public string Email { get; set; }
-        public bool Gender { get; set; }
+        public bool Gender { get; set; } //have penus?
 
         public Card(long cardNo, string name, string lastName, string mobilePhone, string email, bool gender){
             CardNo = cardNo;
@@ -18,6 +18,10 @@ namespace Cards.Entities
             MobilePhone = mobilePhone;
             Email = email;
             Gender = gender;
+        }
+        public Card()
+        {
+
         }
     }
 }
