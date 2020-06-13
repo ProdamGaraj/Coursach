@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Infrastructure.DataAccess.CRUDInterfaces
 {
-    class IUpdatable
+    public interface IUpdatable<TEntity> where TEntity:class
     {
+        void Update(TEntity entity);
     }
 }

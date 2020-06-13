@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Infrastructure.DataAccess.CRUDInterfaces
 {
-    class IDelitable
+    public interface IDelitable<TEntity> where TEntity:class
     {
+        void Delete(TEntity entity);
     }
 }

@@ -7,6 +7,6 @@ namespace Cards.Entities
     public abstract class AuditableEntity : Entity
     {
         public DateTime CreatedAt { get; set; }
-        public DateTime? ModifiedAT { get; set; }
+        public DateTime? ModifiedAt { get; set; }
     }
 }

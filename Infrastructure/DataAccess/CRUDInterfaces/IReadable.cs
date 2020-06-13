@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Infrastructure.DataAccess.CRUDInterfaces
 {
-    class IReadable
+    public interface IReadable<TEntity> where TEntity:class
     {
+        TEntity Get(int id);
     }
 }
