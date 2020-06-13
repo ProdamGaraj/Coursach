@@ -33,9 +33,13 @@ namespace WebCard
         {
             if (env.IsDevelopment())
             {
+                
                 app.UseDeveloperExceptionPage();
             }
+            app.UseFileServer();
 
+            app.UseStatusCodePages();
+             
             app.UseHttpsRedirection();
 
             app.UseRouting();

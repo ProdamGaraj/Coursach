@@ -1,4 +1,5 @@
-﻿using Infrastructure;
+﻿using Entities;
+using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using System;
@@ -17,9 +18,18 @@ namespace DbConsole
     }
     class Program
     {
+        private static readonly AppDbContext _appContext;
+        private static ICardRepository _cardRepository;
+
+        static Program()
+        {
+            AppDbContextFactory factory = new AppDbContextFactory();
+            _appContext = factory.CreateDbContext(null);
+            _cardRepository = new CardRepository(_appContext);
+        }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            _cardRepository.Add(new Card(1, " 2", "3 ", "4 ", "5 ", false));
         }
     }
 }
