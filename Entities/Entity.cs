@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Cards.Entities
+namespace Entities
 {
     public abstract class Entity
     {

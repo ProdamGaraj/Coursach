@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Infrastructure.DataAccess
+namespace Infrastructure
 {
     public abstract class Repository<TEntity> where TEntity : class
     {

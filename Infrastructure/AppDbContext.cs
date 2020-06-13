@@ -1,8 +1,8 @@
 ﻿using System;
-using Cards.Entities;
+using Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.DataAccess
+namespace Infrastructure
 {
     public class AppDbContext : DbContext
     {

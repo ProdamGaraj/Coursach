@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cards.Entities
+namespace Entities
 {
     public class Card : AuditableEntity
     {

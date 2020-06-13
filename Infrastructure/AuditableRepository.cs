@@ -1,10 +1,10 @@
-﻿using Cards.Entities;
+﻿using Entities;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Infrastructure.DataAccess
+namespace Infrastructure
 {
     public abstract class AuditableRepository<TEntity> : Repository<TEntity> where TEntity : AuditableEntity
     {

@@ -1,11 +1,11 @@
-﻿using Cards.Entities;
+﻿using Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 
-namespace Infrastructure.DataAccess
+namespace Infrastructure
 {
     public class CardRepository : AuditableRepository<Card>, ICardRepository
     {
