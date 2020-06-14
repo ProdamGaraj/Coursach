@@ -19,7 +19,7 @@
     "WebCard": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "index.html",
+      "launchUrl": "html/card",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
