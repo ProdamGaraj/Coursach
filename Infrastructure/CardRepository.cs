@@ -31,6 +31,7 @@ namespace Infrastructure
             return DbGet(id);
         }
 
+
         public void Update(Card entity)
         {
             DbUpdate(entity);

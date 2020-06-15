@@ -18,6 +18,13 @@ namespace WebCard.Controllers
             _cardRepository = cardRepository;
         }
 
+
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View(new List<Card>());
+        }
+
         [HttpGet("{id}")]
         public ActionResult Get(int id)
         {
@@ -31,12 +38,13 @@ namespace WebCard.Controllers
         }
 
         [HttpPost("create")]
-        public ActionResult Create([FromBody] Card card)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([FromForm] Card card)
         {
             try
             {
                 _cardRepository.Add(card);
-                return Ok();
+                return RedirectToAction(nameof(Index));
             }
             catch
             {
@@ -55,7 +63,7 @@ namespace WebCard.Controllers
             try
             {
                 _cardRepository.Update(card);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Get));
             }
             catch
             {
@@ -73,7 +81,7 @@ namespace WebCard.Controllers
             try
             {
                 _cardRepository.Delete(card);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Get));
             }
             catch
             {
