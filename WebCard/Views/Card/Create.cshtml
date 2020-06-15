@@ -1,64 +1,64 @@
 ﻿@model Entities.Card
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create";
 }
 
-<h1>Edit</h1>
+<h1>Create</h1>
 
 <h4>Card</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="CardNo" class="control-label"></label>
-                <input asp-for="CardNo" class="form-control" />
+                <input asp-for="CardNo" class="form-control" placeholder="CardNumber"/>
                 <span asp-validation-for="CardNo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+                <input asp-for="Name" class="form-control" placeholder="Name"/>
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" />
+                <input asp-for="LastName" class="form-control" placeholder="Last Name"/>
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MobilePhone" class="control-label"></label>
-                <input asp-for="MobilePhone" class="form-control" />
+                <input asp-for="MobilePhone" class="form-control" placeholder="Mobile phone" />
                 <span asp-validation-for="MobilePhone" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" class="form-control" placeholder="Email"/>
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Gender" /> @Html.DisplayNameFor(model => model.Gender)
-                </label>
-            </div>
             <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label>
+                <input asp-for="Gender" class="form-control" placeholder="Gender"/>
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="visibility:hidden">
                 <label asp-for="CreatedAt" class="control-label"></label>
                 <input asp-for="CreatedAt" class="form-control" />
                 <span asp-validation-for="CreatedAt" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="visibility:hidden">
                 <label asp-for="ModifiedAt" class="control-label"></label>
                 <input asp-for="ModifiedAt" class="form-control" />
                 <span asp-validation-for="ModifiedAt" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" />
+                <input asp-for="Id" class="form-control" placeholder="Id"/>
                 <span asp-validation-for="Id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>

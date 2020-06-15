@@ -29,7 +29,7 @@ namespace DbConsole
         }
         static void Main(string[] args)
         {
-            _cardRepository.Add(new Card(1, " 2", "3 ", "4 ", "5 ", false));
+
         }
     }
 }
