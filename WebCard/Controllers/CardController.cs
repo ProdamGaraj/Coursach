@@ -76,7 +76,8 @@ namespace WebCard.Controllers
             return View(_cardRepository.Get(id));
         }
         [HttpDelete("{id}")]
-        public ActionResult Delete([FromBody] Card card)
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, [FromBody] Card card)
         {
             try
             {
