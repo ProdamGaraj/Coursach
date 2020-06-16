@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Infrastructure;
 using Entities;
-
+using Infrastructure;
 namespace WebCard.Controllers
 {
+    [Route("html/[controller]")]
     public class CouponController : Controller
     {
         private ICouponRepository _couponRepository { get; set; }
@@ -17,27 +17,29 @@ namespace WebCard.Controllers
         {
             _couponRepository = couponRepository;
         }
+        [HttpGet]
         public ActionResult Index()
         {
             return View(new List<Coupon>());
         }
+        [HttpGet("{id}")]
 
         // GET: HomeController/Details/5
         public ActionResult Get(int id)
         {
             return View(_couponRepository.Get(id));
         }
-
+        [HttpGet("add")]
         // GET: HomeController/Create
-        public ActionResult Create()
+        public ActionResult Add()
         {
             return View();
         }
 
         // POST: HomeController/Create
-        [HttpPost("create")]
+        [HttpPost("add")]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([FromForm] Coupon coupon)
+        public ActionResult Add([FromForm] Coupon coupon)
         {
             try
             {
@@ -51,26 +53,26 @@ namespace WebCard.Controllers
         }
 
         // GET: HomeController/Delete/5
-        [HttpGet("delete/{id}")]
-    public ActionResult Delete(int id)
-    {
-        return View(_couponRepository.Get(id));
-    }
+        [HttpGet("remove/{id}")]
+        public ActionResult Remove(int id)
+        {
+            return View(_couponRepository.Get(id));
+        }
 
-    // POST: HomeController/Delete/5
-    [HttpDelete("{id}")]
-    [ValidateAntiForgeryToken]
-    public ActionResult Delete(int id, IFormCollection collection, Coupon coupon)
-    {
-        try
+        // POST: HomeController/Delete/5
+        [HttpDelete("{id}")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Remove(int id, [FromBody] Coupon coupon)
         {
+            try
+            {
                 _couponRepository.Remove(coupon);
-            return RedirectToAction(nameof(Index));
-        }
-        catch
-        {
-            return View();
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
-}
 }

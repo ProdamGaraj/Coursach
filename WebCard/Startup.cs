@@ -30,7 +30,7 @@ namespace WebCard
             services.AddControllers().AddNewtonsoftJson();
             services.AddControllersWithViews();
             services.AddScoped<ICardRepository, CardRepository>();
-
+            services.AddScoped<ICouponRepository, CouponRepository>();
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MsSqlConnection")));
         }
