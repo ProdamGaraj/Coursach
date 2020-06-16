@@ -12,22 +12,22 @@ namespace Infrastructure
         {
 
         }
-        public override void DbAdd(TEntity entity)
+        public override void Add(TEntity entity)
         {
             entity.CreatedAt = DateTime.Now;
-            base.DbAdd(entity);
+            base.Add(entity);
             SaveChanges();
         }
 
-        public override void DbUpdate(TEntity entity)
+        public override void Update(TEntity entity)
         {
             entity.ModifiedAt = DateTime.Now;
-            base.DbUpdate(entity);
+            base.Update(entity);
             SaveChanges();
         }
-        public override void DbRemove(TEntity entity)
+        public override void Remove(TEntity entity)
         {
-            base.DbRemove(entity);
+            base.Remove(entity);
             SaveChanges();
         }
     }

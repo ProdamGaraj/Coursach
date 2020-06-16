@@ -12,22 +12,22 @@ namespace Infrastructure
             DbContext = dbContext;
         }
 
-        public virtual TEntity DbGet(int id)
+        public virtual TEntity Get(int id)
         {
             return DbContext.Find<TEntity>(id);
         }
 
-        public virtual void DbAdd(TEntity entity)
+        public virtual void Add(TEntity entity)
         {
             DbContext.Add(entity);
         }
 
-        public virtual void DbUpdate(TEntity entity)
+        public virtual void Update(TEntity entity)
         {
             DbContext.Update(entity);
         }
 
-        public virtual void DbRemove(TEntity entity)
+        public virtual void Remove(TEntity entity)
         {
             DbContext.Remove(entity);
         }

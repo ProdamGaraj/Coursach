@@ -7,11 +7,12 @@ using System.Text;
 
 namespace Infrastructure
 {
-    public class CardRepository : AuditableRepository<Card>, ICardRepository
+    public class CouponRepository : AuditableRepository<Coupon>, ICouponRepository
     {
         private readonly AppDbContext _dbContext;
 
-        public CardRepository(AppDbContext dbContext) : base(dbContext)
+
+        public CouponRepository(AppDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }

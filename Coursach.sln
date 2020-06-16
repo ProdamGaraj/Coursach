@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConsole", "DbConsole\DbCo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{68FB4508-F16B-462E-8503-057785A59AA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{89EA85D1-E45E-47D6-B361-EE73EEF734B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{89EA85D1-E45E-47D6-B361-EE73EEF734B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCard", "WebCard\WebCard.csproj", "{942367B0-A448-4BB4-B973-1B6427A70CB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebCard", "WebCard\WebCard.csproj", "{942367B0-A448-4BB4-B973-1B6427A70CB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

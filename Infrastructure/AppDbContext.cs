@@ -11,5 +11,6 @@ namespace Infrastructure
         {
         }
         public DbSet<Card> Cards { get; set; }
+        public DbSet<Coupon> Coupons { get; set; }
     }
 }

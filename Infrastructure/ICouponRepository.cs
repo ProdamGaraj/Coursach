@@ -6,8 +6,7 @@ using System.Text;
 
 namespace Infrastructure
 {
-    public interface ICardRepository : IAddable<Card>, IRemovable<Card>, IUpdatable<Card>, IReadable<Card> 
+    public interface ICouponRepository: IAddable<Coupon>, IReadable<Coupon>, IRemovable<Coupon>
     {
-
     }
 }

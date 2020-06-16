@@ -63,7 +63,7 @@ namespace WebCard.Controllers
             try
             {
                 _cardRepository.Update(card);
-                return RedirectToAction(nameof(Get));
+                return RedirectToAction(nameof(Index));
             }
             catch
             {
@@ -71,18 +71,19 @@ namespace WebCard.Controllers
             }
         }
         [HttpGet("delete/{id}")]
-        public ActionResult Delete(int id)
+        public ActionResult Remove(int id)
         {
             return View(_cardRepository.Get(id));
         }
         [HttpDelete("{id}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, [FromBody] Card card)
+        public ActionResult Remove(int id, [FromBody] Card card)
         {
             try
             {
-                _cardRepository.Delete(card);
-                return RedirectToAction(nameof(Get));
+                _cardRepository.Remove(card);
+                return RedirectToAction(nameof(Index));
+                
             }
             catch
             {
