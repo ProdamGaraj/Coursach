@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace Infrastructure
@@ -15,6 +16,10 @@ namespace Infrastructure
         public CouponRepository(AppDbContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
+        }
+        public IReadOnlyList<Coupon> GetAllCoupons()
+        {
+            return _dbContext.Coupons.Include(b => b.Card).ToList();
         }
     }
 }

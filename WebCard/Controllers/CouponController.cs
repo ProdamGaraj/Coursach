@@ -16,6 +16,7 @@ namespace WebCard.Controllers
         public CouponController(ICouponRepository couponRepository)
         {
             _couponRepository = couponRepository;
+          
         }
         [HttpGet]
         public ActionResult Index()

@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Entities.Coupon>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "GetAll";
 }
 
-<h1>IndexCoupon</h1>
+<h1>GetAll</h1>
 
 <p>
-    <a asp-action="Add">Create New</a>
+    <a asp-action="Index">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -61,9 +61,9 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { item.Id }) |
-                @Html.ActionLink("Details", "Details", new { item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { item.Id })
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
 }
