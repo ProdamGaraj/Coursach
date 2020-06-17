@@ -11,10 +11,11 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
+            @Html.HiddenFor(p=>p.Id)
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">      
+            <div class="form-group">
                 <label asp-for="CardNo" class="control-label"></label>
-                <input asp-for="CardNo" class="form-control" placeholder="Card Number"/>
+                <input asp-for="CardNo" class="form-control" placeholder="Card Number" />
                 <span asp-validation-for="CardNo" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -26,28 +27,28 @@
             <div class="form-group">
 
                 <label asp-for="LastName" class="control-label"></label>
-                <input asp-for="LastName" class="form-control" placeholder="Last Name"/>
+                <input asp-for="LastName" class="form-control" placeholder="Last Name" />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
 
                 <label asp-for="MobilePhone" class="control-label"></label>
-                <input asp-for="MobilePhone" class="form-control" placeholder="Mobile Phone"/>
+                <input asp-for="MobilePhone" class="form-control" placeholder="Mobile Phone" />
                 <span asp-validation-for="MobilePhone" class="text-danger"></span>
             </div>
             <div class="form-group">
 
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" placeholder="Email"/>
+                <input asp-for="Email" class="form-control" placeholder="Email" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
 
                 <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" placeholder="Gender"/>
+                <input asp-for="Gender" class="form-control" placeholder="Gender" />
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
-            <div class="form-group" >
+            <div class="form-group">
                 <label asp-for="CreatedAt" class="control-label"></label>
                 <input asp-for="CreatedAt" class="form-control" />
                 <span asp-validation-for="CreatedAt" class="text-danger"></span>
@@ -60,7 +61,7 @@
             <div class="form-group">
 
                 <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" placeholder="Id"/>
+                <input asp-for="Id" class="form-control" placeholder="Id" />
                 <span asp-validation-for="Id" class="text-danger"></span>
             </div>
             <div class="form-group">

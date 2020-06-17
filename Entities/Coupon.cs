@@ -10,6 +10,7 @@ namespace Entities
         public string Value { get; set; }
         public string Type { get; set; }
         public int CardId { get; set; }
+        public Card Card { get; set; }
         public Coupon(string number, string value, string type, int cardId)
         {
             Number = number;
