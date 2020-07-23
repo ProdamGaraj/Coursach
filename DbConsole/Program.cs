@@ -29,7 +29,6 @@ namespace DbConsole
         }
         static void Main(string[] args)
         {
-
         }
     }
 }

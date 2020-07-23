@@ -52,12 +52,13 @@ namespace WebCard.Controllers
             }
         }
 
-        [HttpGet("update/{id}")]
+        [HttpGet("edit/{id}")]
         public ActionResult Edit(int id)
         {
             return View(_cardRepository.Get(id));
         }
-        [HttpPut("{id}")]
+        [HttpPost("edit/{id}")]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, [FromBody] Card card)
         {
             try
@@ -70,13 +71,8 @@ namespace WebCard.Controllers
                 return View();
             }
         }
-        [HttpGet("delete/{id}")]
-        public ActionResult Remove(int id)
-        {
-            return View(_cardRepository.Get(id));
-        }
-        [HttpDelete("{id}")]
-        [ValidateAntiForgeryToken]
+
+        [HttpDelete("remove/{id}")]
         public ActionResult Remove(int id, [FromBody] Card card)
         {
             try
