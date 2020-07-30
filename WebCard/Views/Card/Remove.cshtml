@@ -67,7 +67,7 @@
             </dd>
         </dl>
 
-        <form asp-action="Remove">
+        <form asp-action="Remove" asp-route-id="@Model.Id">
             <input type="submit" value="Remove" class="btn btn-danger" /> |
             <a asp-action="Index">Back to List</a>
         </form>

@@ -59,7 +59,7 @@ namespace WebCard.Controllers
         }
         [HttpPost("edit/{id}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, [FromBody] Card card)
+        public ActionResult Edit(int id, [FromForm] Card card)
         {
             try
             {
@@ -71,8 +71,13 @@ namespace WebCard.Controllers
                 return View();
             }
         }
+        [HttpGet("remove/id")]
+        public ActionResult Remove(int id)
+        {
+            return View(_cardRepository.Get(id));
+        }
 
-        [HttpDelete("remove/{id}")]
+        [HttpPost("remove/{id}")]
         public ActionResult Remove(int id, [FromBody] Card card)
         {
             try
