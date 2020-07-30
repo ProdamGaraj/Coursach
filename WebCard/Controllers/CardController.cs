@@ -84,7 +84,6 @@ namespace WebCard.Controllers
             {
                 _cardRepository.Remove(card);
                 return RedirectToAction(nameof(Index));
-                
             }
             catch
             {

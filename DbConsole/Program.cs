@@ -29,6 +29,11 @@ namespace DbConsole
         }
         static void Main(string[] args)
         {
+
+            ///* Card card = new Card("2", "2", "2", "2", "2", "2");
+            *///_cardRepository.Add(card);
+            *///_cardRepository.Remove(card);
+            ;
         }
     }
 }
