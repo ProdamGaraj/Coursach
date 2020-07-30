@@ -71,14 +71,14 @@ namespace WebCard.Controllers
                 return View();
             }
         }
-        [HttpGet("remove/id")]
+        [HttpGet("remove/{id}")]
         public ActionResult Remove(int id)
         {
             return View(_cardRepository.Get(id));
         }
 
         [HttpPost("remove/{id}")]
-        public ActionResult Remove(int id, [FromBody] Card card)
+        public ActionResult Remove(int id, [FromForm] Card card)
         {
             try
             {
