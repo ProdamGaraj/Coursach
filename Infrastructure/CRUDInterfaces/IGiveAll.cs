@@ -6,6 +6,6 @@ namespace Infrastructure.CRUDInterfaces
 {
     public interface IGiveAll<TEntity> where TEntity : class
     {
-        TEntity GetAllCoupons();
+        IList<TEntity> GetAll();
     }
 }

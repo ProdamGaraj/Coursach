@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Entities;
 using Infrastructure;
+
 namespace WebCard.Controllers
 {
     [Route("html/[controller]")]
@@ -17,7 +18,6 @@ namespace WebCard.Controllers
         {
             _cardRepository = cardRepository;
         }
-
 
         [HttpGet]
         public ActionResult Index()
@@ -57,6 +57,7 @@ namespace WebCard.Controllers
         {
             return View(_cardRepository.Get(id));
         }
+
         [HttpPost("edit/{id}")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, [FromForm] Card card)
@@ -71,6 +72,7 @@ namespace WebCard.Controllers
                 return View();
             }
         }
+
         [HttpGet("remove/{id}")]
         public ActionResult Remove(int id)
         {

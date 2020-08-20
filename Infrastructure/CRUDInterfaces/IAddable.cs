@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Infrastructure.CRUDInterfaces
 {
-    public interface IAddable<TEntity> where TEntity: class
+    public interface IAddable<TEntity> where TEntity : class
     {
         void Add(TEntity entity);
     }

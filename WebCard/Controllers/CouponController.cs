@@ -6,23 +6,26 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Entities;
 using Infrastructure;
+
 namespace WebCard.Controllers
 {
     [Route("html/[controller]")]
     public class CouponController : Controller
     {
         private ICouponRepository _couponRepository { get; set; }
+
         // GET: HomeController
         public CouponController(ICouponRepository couponRepository)
         {
             _couponRepository = couponRepository;
-          
         }
+
         [HttpGet]
         public ActionResult Index()
         {
             return View(new List<Coupon>());
         }
+
         [HttpGet("{id}")]
 
         // GET: HomeController/Details/5
@@ -30,6 +33,7 @@ namespace WebCard.Controllers
         {
             return View(_couponRepository.Get(id));
         }
+
         [HttpGet("add")]
         // GET: HomeController/Create
         public ActionResult Add()
