@@ -10,8 +10,7 @@ namespace Infrastructure
 {
     public class CouponRepository : AuditableRepository<Coupon>, ICouponRepository
     {
-        private readonly AppDbContext _dbContext;
-
+        public readonly AppDbContext _dbContext;
 
         public CouponRepository(AppDbContext dbContext) : base(dbContext)
         {

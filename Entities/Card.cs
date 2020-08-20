@@ -15,11 +15,11 @@ namespace Entities
         public virtual ICollection<Coupon> Coupons { get; set; }
 
         public Card(
-            string cardNumber, 
-            string firstName, 
-            string lastName, 
-            string mobilePhone, 
-            string email, 
+            string cardNumber,
+            string firstName,
+            string lastName,
+            string mobilePhone,
+            string email,
             string gender,
             ICollection<Coupon> coupons)
         {

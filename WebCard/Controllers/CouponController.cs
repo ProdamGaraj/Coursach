@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Entities;
 using Infrastructure;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace WebCard.Controllers
 {
@@ -38,6 +39,8 @@ namespace WebCard.Controllers
         // GET: HomeController/Create
         public ActionResult Add()
         {
+            // TODO: OPTIMIZE
+            ViewBag.Cards = new SelectList(((CouponRepository)_couponRepository)._dbContext.Cards, "Id", "CardNumber");
             return View();
         }
 
@@ -46,8 +49,12 @@ namespace WebCard.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Add([FromForm] Coupon coupon)
         {
+            var forms = Request.Form;
             try
-            {
+            {  // Sorry they(https://stackoverflow.com/questions/34624034/select-tag-helper-in-asp-net-core-mvc || https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection?view=aspnetcore-3.1 || https://habr.com/ru/post/276277/) told me this.
+                var selectedIds = int.Parse(Request.Form["Card"][0]);
+                var card = ((CouponRepository)_couponRepository)._dbContext.Cards.Find(selectedIds);
+                coupon.Card = card;
                 _couponRepository.Add(coupon);
                 return RedirectToAction(nameof(Index));
             }
@@ -64,9 +71,7 @@ namespace WebCard.Controllers
             return View(_couponRepository.Get(id));
         }
 
-        // POST: HomeController/Delete/5
         [HttpPost("remove/{id}")]
-        [ValidateAntiForgeryToken]
         public ActionResult Remove(int id, [FromForm] Coupon coupon)
         {
             try
@@ -76,7 +81,7 @@ namespace WebCard.Controllers
             }
             catch
             {
-                return View();
+                return BadRequest();
             }
         }
     }
