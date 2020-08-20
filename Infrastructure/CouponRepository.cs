@@ -17,7 +17,8 @@ namespace Infrastructure
         {
             _dbContext = dbContext;
         }
-        public IReadOnlyList<Coupon> GetAllCoupons()
+
+        public IList<Coupon> GetAll()
         {
             return _dbContext.Coupons.Include(b => b.Card).ToList();
         }

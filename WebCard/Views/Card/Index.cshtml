@@ -13,10 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CardNo)
+                @Html.DisplayNameFor(model => model.CardNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.FirstName)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.LastName)
@@ -47,10 +47,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CardNo)
+                    @Html.DisplayFor(modelItem => item.CardNumber)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    @Html.DisplayFor(modelItem => item.FirstName)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.LastName)
@@ -75,8 +75,7 @@
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { item.Id })
+                    @Html.ActionLink("Delete", "Remove", new { item.Id })
                 </td>
             </tr>
         }

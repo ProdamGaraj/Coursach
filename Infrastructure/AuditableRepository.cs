@@ -10,8 +10,8 @@ namespace Infrastructure
     {
         public AuditableRepository(AppDbContext dbContext) : base(dbContext)
         {
-
         }
+
         public override void Add(TEntity entity)
         {
             entity.CreatedAt = DateTime.Now;
@@ -25,6 +25,7 @@ namespace Infrastructure
             base.Update(entity);
             SaveChanges();
         }
+
         public override void Remove(TEntity entity)
         {
             base.Remove(entity);

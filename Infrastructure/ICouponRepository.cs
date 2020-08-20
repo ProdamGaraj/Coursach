@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Infrastructure
 {
-    public interface ICouponRepository: IAddable<Coupon>, IReadable<Coupon>, IRemovable<Coupon>
+    public interface ICouponRepository : IAddable<Coupon>, IReadable<Coupon>, IRemovable<Coupon>, IGiveAll<Coupon>
     {
     }
 }

@@ -40,9 +40,9 @@ namespace WebCard
         {
             if (env.IsDevelopment())
             {
-
                 app.UseDeveloperExceptionPage();
             }
+
             app.UseFileServer();
 
             app.UseStatusCodePages();
@@ -53,10 +53,7 @@ namespace WebCard
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }

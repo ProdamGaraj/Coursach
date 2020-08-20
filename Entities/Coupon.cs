@@ -7,22 +7,21 @@ namespace Entities
 {
     public class Coupon : AuditableEntity
     {
-        [ForeignKey ("CardId")]
         public string Number { get; set; }
         public string Value { get; set; }
         public string Type { get; set; }
-        public int CardId { get; set; }
-        public Card Card { get; set; }
-        public Coupon(string number, string value, string type, int cardId)
+        public virtual Card Card { get; set; }
+
+        public Coupon(string number, string value, string type, Card card)
         {
             Number = number;
             Value = value;
             Type = type;
-            CardId = cardId;
+            Card = card;
         }
+
         public Coupon()
         {
-                
         }
     }
 }
