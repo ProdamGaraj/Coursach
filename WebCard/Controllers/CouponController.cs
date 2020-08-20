@@ -61,9 +61,9 @@ namespace WebCard.Controllers
         }
 
         // POST: HomeController/Delete/5
-        [HttpDelete("{id}")]
+        [HttpPost("remove/{id}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Remove(int id, [FromBody] Coupon coupon)
+        public ActionResult Remove(int id, [FromForm] Coupon coupon)
         {
             try
             {
