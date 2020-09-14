@@ -14,10 +14,5 @@ namespace Infrastructure
             : base(options)
         {
         }
-
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    // modelBuilder.Entity<Coupon>().HasOne(p => p.Card).WithMany(b => b.Coupons);
-        //}
     }
 }

@@ -24,7 +24,7 @@ namespace WebCard.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(new List<Coupon>());
+            return View(_couponRepository.GetAll());
         }
 
         [HttpGet("{id}")]
