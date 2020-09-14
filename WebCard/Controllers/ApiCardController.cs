@@ -43,9 +43,9 @@ namespace WebBook.Controllers
 
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] Card card)
+        public ActionResult Put(int id, [FromBody] Card coupon)
         {
-            _cardRepository.Update(card);
+            _cardRepository.Update(coupon);
             return Ok();
         }
 
